@@ -58,6 +58,7 @@ const reducer = (state = initialState, action) => {
                 loggedIn: false,
                 error: action.payload
             }
+            default: return state
     }
 }
 
