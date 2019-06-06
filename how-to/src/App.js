@@ -1,9 +1,10 @@
 import React from 'react';
 import './App.css';
 import { Route, NavLink, withRouter } from 'react-router-dom';
-import register from './componenets/register';
-import login from './componenets/login';
-import home from './componenets/home'
+import register from './components/register';
+import login from './components/login';
+import home from './components/home'
+import Steps from './components/steps';
 
 
 function App(props) {
@@ -12,21 +13,35 @@ function App(props) {
     props.history.push("/");
   };
 
+  let loggedInNavBar = (
+    <nav className='navBar'>
+      <NavLink exact to='/home'> home </NavLink>
+      <NavLink onClick={logout} className='logout' to='/' >Logout</NavLink>
+    </nav>
+  );
+
+  let loggedOutNavBar = (
+    <nav className='navBar'>
+      <NavLink exact to='/registers'> Register </NavLink>
+      <NavLink exact to='/'> Login </NavLink>
+    </nav>
+  );
+
   return (
     <div className='links' >
-      <nav>
-        <NavLink exact to='/registers'> Register </NavLink>
-        <NavLink exact to='/'> Login </NavLink>
-        <NavLink exact to='/home'>home</NavLink>
-        <NavLink onClick={logout} className='logout' to='/' >Logout</NavLink>
 
-      </nav>
+      {localStorage.getItem('jwt') ? (
+        <div className="navBar">{loggedInNavBar}</div>
+      ) : (
+          <div>{loggedOutNavBar}</div>
+        )}
       <Route exact path='/registers' component={register} />
       <Route exact path='/' component={login} />
-      <Route exact path='/home' component={home} />
+      <Route path='/home' component={home} />
+      <Route path='/steps/:howtoId' component={Steps} />
     </div>
   );
 
 }
 
-export default withRouter( App );
+export default withRouter(App);

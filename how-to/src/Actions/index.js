@@ -58,3 +58,23 @@ export const addHowTo = howto => dispatch => {
             dispatch({ type: ADD_HOWTO_FAILURE, payload: error.message })
         })
 }
+
+/// UPDATING 
+
+export const UPDATING_HOWTO = 'UPDATING_HOWTO';
+export const UPDATING_HOWTO_SUCCESS = 'UPDATING_HOWTO_SUCCESS';
+export const UPDATING_HOWTO_FAILURE = 'UPDATING_HOWTO_FAILURE'
+
+export const updatingHowTo = howto => dispatch => {
+    console.log( howto )
+    dispatch({ type: UPDATING_HOWTO })
+    return axios.post( 'https://build-week-how-to.herokuapp.com/api/howto/2' , howto ,  { headers: { Authorization: localStorage.getItem( 'jwt' ) } })
+        .then( res => {
+            dispatch({ type: UPDATING_HOWTO_SUCCESS , payload: res.data.token })
+            localStorage.setItem( 'jwt' , res.data.token );
+            console.log( res );
+        })
+        .catch( error => {
+            dispatch({ type: UPDATING_HOWTO_FAILURE, payload: error.message })
+        })
+}
