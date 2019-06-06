@@ -1,8 +1,7 @@
 //IMPORTS
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { register } from '../Actions/index';
-import '../App.css';
+import { register } from '../../actions/index';
 
 //REGISTER FORM
 class RegisterForm extends Component {
@@ -26,7 +25,7 @@ class RegisterForm extends Component {
 
     submitDataHandler = event => {
         event.preventDefault();
-        this.props.register( this.state.userInfo ).then( () => this.props.history.push( "/" ))
+        this.props.register( this.state.userInfo ).then( () => this.props.history.push( "/howtos" ))
     };
 
     render() {

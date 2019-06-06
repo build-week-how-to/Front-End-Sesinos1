@@ -1,8 +1,7 @@
 //IMPORTS
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../Actions';
-import '../App.css';
+import { login } from '../../actions';
 
 //LOGIN FORM
 class LoginForm extends Component {
@@ -26,7 +25,7 @@ class LoginForm extends Component {
 
     submitDataHandler = event => {
         event.preventDefault();
-        this.props.login(this.state.userInfo).then(() => this.props.history.push("/home"))
+        this.props.login(this.state.userInfo).then(() => this.props.history.push("/howtos"))
     };
 
     render() {
