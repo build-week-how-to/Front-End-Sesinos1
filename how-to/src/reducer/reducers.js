@@ -1,26 +1,29 @@
 //IMPORTS
-import {
+import { 
     REGISTER,
     REGISTER_SUCCESS,
     REGISTER_FAILURE,
     LOGIN,
     LOGIN_SUCCESS,
     LOGIN_FAILURE,
-} from '../Actions/';
+    // DELETE_HOWTO,
+    // DELETE_HOWTO_FAILURE,
+    // DELETE_HOWTO_SUCCESS
+} from '../actions/index';
 
 //DEFAULT STATE
 const initialState = {
-    users: [],
     registering: false,
     registered: false,
     loggingIn: false,
     loggedIn: false,
+    // deletingHowto: false,
     error: null
 }
 
 //REDUCERS
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
+const reducer = ( state = initialState , action ) => {
+    switch ( action.type ) {
         case REGISTER:
             return {
                 ...state,
@@ -58,7 +61,26 @@ const reducer = (state = initialState, action) => {
                 loggedIn: false,
                 error: action.payload
             }
-            default: return state
+        // case DELETE_HOWTO:
+        //     return {
+        //         ...state,
+        //         loggedIn: true,
+        //         deletingHowto: true,
+        //     }
+        // case DELETE_HOWTO_SUCCESS:
+        //     return {
+        //         ...state,
+        //         loggedIn: true,
+        //         deletingHowto: false
+        //     }
+        // case DELETE_HOWTO_FAILURE:
+        //     return {
+        //         ...state,
+        //         loggedIn: true,
+        //         deletingHowto: false,
+        //         error: action.payload
+        //     }
+        default: return state
     }
 }
 

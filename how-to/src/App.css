@@ -31,3 +31,31 @@
     transform: rotate(360deg);
   }
 }
+
+nav.navBar {
+  padding: 5px;
+  margin: 5px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+a.option.active {
+  background-color: red;
+}
+
+textarea#id.input{
+  min-width: 200px;
+  min-height: 200px;
+}
+
+div.howtos div {
+  display: flex;
+  flex-direction: column;
+}
+
+div.howtos div img{
+  width: 300px;
+  height: auto;
+}
