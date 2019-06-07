@@ -66,6 +66,12 @@ div.howtos div img{
   height: auto;
 }
 
+.links{
+  margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
 .option {
  color: gold;
 }
