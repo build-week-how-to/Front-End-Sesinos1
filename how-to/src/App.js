@@ -21,7 +21,7 @@ function App(props) {
     <nav className='navBar'>
       <NavLink to='/howtos' className = 'option'> Home </NavLink>
       <NavLink to='/addHowTo'className = 'option' > Add How To </NavLink>
-      <NavLink onClick={logout} className = 'option' to='/' >Logout</NavLink>
+      <NavLink onClick={logout} className = 'option' exact to='/' >Logout</NavLink>
     </nav>
   );
 
