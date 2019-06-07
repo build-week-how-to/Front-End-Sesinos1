@@ -9,7 +9,7 @@ import {
     // DELETE_HOWTO,
     // DELETE_HOWTO_FAILURE,
     // DELETE_HOWTO_SUCCESS
-} from '../actions/index';
+} from '../actions';
 
 //DEFAULT STATE
 const initialState = {
@@ -86,3 +86,4 @@ const reducer = ( state = initialState , action ) => {
 
 //EXPORTS
 export default reducer;
+//ha
