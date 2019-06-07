@@ -56,10 +56,9 @@ textarea#id.input{
 }
 
 div.howtos div {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  padding: 10px;
-  width: 100%;
+  margin: 10px;
 }
 
 div.howtos div img{
@@ -85,7 +84,10 @@ h2 {
 
 .howtos {
   display: flex;
-  margin: 20px;
+  margin: 40px;
+  flex-flow: wrap;
+  justify-content: space-between;
+  justify-content: center;
 }
 * {
   background-color: black;
