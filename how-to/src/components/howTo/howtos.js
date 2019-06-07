@@ -21,7 +21,7 @@ class HowTos extends Component {
 
     render() {
         return (
-            <>
+            <div className = 'howtos-container'>
                 <h2> How Tos: </h2>
                 <div className = 'howtos'>
                     {this.state.howtos.map( h => (
@@ -31,7 +31,7 @@ class HowTos extends Component {
                         </div>
                     ))}
                 </div>
-            </>
+            </div>
         );
     }
 }

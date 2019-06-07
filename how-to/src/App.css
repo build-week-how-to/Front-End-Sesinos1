@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 100%;
 }
 
 .App-logo {
@@ -32,13 +33,17 @@
   }
 }
 
+.navBar {
+  background-color: black,
+}
+
 nav.navBar {
   padding: 5px;
-  margin: 5px;
   display: inline-flex;
   justify-content: space-evenly;
   width: 100%;
-  border-bottom: 1px solid black;
+  background-color: black;
+  
 }
 
 a.option.active {
@@ -53,9 +58,53 @@ textarea#id.input{
 div.howtos div {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  width: 100%;
 }
 
 div.howtos div img{
   width: 300px;
   height: auto;
+}
+
+.option {
+ color: gold;
+}
+
+.howtos-container {
+  display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+h2 {
+  display: flex;
+    justify-content: center;
+    font-size: 4rem;
+}
+
+.howtos {
+  display: flex;
+  margin: 20px;
+}
+* {
+  background-color: black;
+  color: gold;
+}
+.form-wrap {
+  display: flex;
+  justify-content: center;
+
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 28%;
+}
+.register{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 28%;
 }
